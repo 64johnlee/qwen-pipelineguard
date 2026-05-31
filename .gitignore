@@ -1,11 +1,6 @@
-# Secrets / local environment
-.env
-.env.bak.*
 
-# Python
+.env
 __pycache__/
-*.py[cod]
+*.pyc
 .pytest_cache/
-*.egg-info/
-build/
-dist/
+nlnet-application-draft.md
