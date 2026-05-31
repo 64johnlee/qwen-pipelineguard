@@ -26,8 +26,11 @@ except ImportError:
 logger = logging.getLogger(__name__)
 console = Console()
 
-_QWEN_MODEL = os.environ.get("QWEN_MODEL", "qwen-plus")
-_QWEN_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+# Provider config — supports DashScope (Alibaba) or any OpenAI-compatible endpoint
+# OpenRouter:  QWEN_BASE_URL=https://openrouter.ai/api/v1  QWEN_MODEL=qwen/qwen-plus  QWEN_API_KEY=sk-or-...
+# DashScope:   QWEN_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1  QWEN_API_KEY=sk-...
+_QWEN_MODEL    = os.environ.get("QWEN_MODEL", "qwen/qwen-plus")
+_QWEN_BASE_URL = os.environ.get("QWEN_BASE_URL", "https://openrouter.ai/api/v1")
 _MAX_TOOL_ITERATIONS = 15
 
 
@@ -71,7 +74,7 @@ class QwenPipelineGuardAgent:
         force_direct: bool = False,
     ) -> None:
         self._client = OpenAI(
-            api_key=qwen_api_key or os.environ.get("DASHSCOPE_API_KEY", ""),
+            api_key=qwen_api_key or os.environ.get("QWEN_API_KEY") or os.environ.get("DASHSCOPE_API_KEY", ""),
             base_url=_QWEN_BASE_URL,
         )
         self._gitlab_token = gitlab_token
