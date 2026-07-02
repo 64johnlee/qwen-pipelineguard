@@ -1,0 +1,15 @@
+# QwenPipelineGuard — live Qwen Cloud proof-of-deployment transcript
+# Alibaba Cloud Model Studio (dashscope-intl), free-tier key.
+
+--- qwen-plus @ https://dashscope-intl.aliyuncs.com/compatible-mode/v1 ---
+response:   QwenPipelineGuard on Alibaba Cloud
+model:      qwen-plus
+request_id: chatcmpl-42468558-97c7-9bd3-a215-2410864e43dc
+usage:      CompletionUsage(completion_tokens=7, prompt_tokens=19, total_tokens=26, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cached_tokens=0))
+
+--- qwen-max @ https://dashscope-intl.aliyuncs.com/compatible-mode/v1 ---
+response:   QwenPipelineGuard triage on Alibaba Cloud
+model:      qwen-max
+request_id: chatcmpl-9607a437-0b48-9be3-9a7f-717fc05e811d
+usage:      CompletionUsage(completion_tokens=9, prompt_tokens=21, total_tokens=30, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cached_tokens=0))
+
